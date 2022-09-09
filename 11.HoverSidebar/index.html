@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover sidebar navigation</title>
+    <style>
+      #mySidenav a {
+        position: absolute;
+        left: -80px;
+        transition: 0.3s;
+        padding: 15px;
+        width: 100px;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        border-radius: 0 5px 5px 0;
+      }
+
+      #mySidenav a:hover {
+        left: 0;
+      }
+
+      #about {
+        top: 20px;
+        background-color: #04aa6d;
+      }
+
+      #blog {
+        top: 80px;
+        background-color: #2196f3;
+      }
+
+      .content {
+        padding-left: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="#" id="about">About</a>
+      <a href="#" id="blog">Blog</a>
+    </div>
+    <div class="content">
+      <h2>Hoverable Sidenav Buttons</h2>
+      <p
+        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis
+        corporis molestias harum ex laborum aperiam? Doloremque nulla doloribus
+        repellat est laudantium reprehenderit. Dolores magnam unde accusamus
+        architecto! Praesentium, magni exercitationem!</p
+      >
+    </div>
+  </body>
+</html>

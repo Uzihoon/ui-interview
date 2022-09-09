@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab Header</title>
+    <style>
+      body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
+      .tablink {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+      }
+
+      .tablink:hover {
+        background-color: #777;
+      }
+
+      .tabcontent {
+        color: #fff;
+        display: none;
+        padding: 50px;
+        text-align: center;
+      }
+
+      #london {
+        background-color: rgb(243, 109, 109);
+      }
+
+      #paris {
+        background-color: rgb(127, 127, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <p>Click on the buttons inside the tabbed menu:</p>
+
+    <div id="london" class="tabcontent">
+      <h1>London</h1>
+      <p>London is the capital city of England</p>
+    </div>
+    <div id="paris" class="tabcontent">
+      <h1>Paris</h1>
+      <p>Paris is the capital city of France</p>
+    </div>
+
+    <div class="tab">
+      <button class="tablink" data-id="london" data-color="red" id="default"
+        >London</button
+      >
+      <button class="tablink" data-id="paris" data-color="blue">Paris</button>
+    </div>
+    <script>
+      const tab = document.querySelector('.tab');
+
+      tab.addEventListener('click', (event) => {
+        if (!event.target.classList.contains('tablink')) return;
+
+        const capital = event.target.dataset.id;
+
+        [...document.querySelectorAll('.tabcontent')].forEach(
+          (tab) => (tab.style.display = 'none')
+        );
+
+        [...document.querySelectorAll('.tablink')].forEach(
+          (tab) => (tab.style.backgroundColor = '')
+        );
+
+        document.getElementById(capital).style.display = 'block';
+        event.target.style.backgroundColor = event.target.dataset.color;
+      });
+
+      document.querySelector('#default').click();
+    </script>
+  </body>
+</html>

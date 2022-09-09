@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Magnifier Glass</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .img-magnifier-container {
+        position: relative;
+      }
+
+      .img-magnifier-glass {
+        position: absolute;
+        border: 3px solid #000;
+        border-radius: 50%;
+        cursor: none;
+        width: 100px;
+        height: 100px;
+      }
+
+      .img {
+        width: 100%;
+        height: 300px;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Image Magnifier Glass</h1>
+    <p>Mouse over the image:</p>
+
+    <div class="img-magnifier-container">
+      <div class="img" id="myImg"></div>
+    </div>
+
+    <script>
+      function magnify(imgId, zoom) {
+        let img = document.getElementById(imgId);
+        let glass = document.createElement('div');
+        let w;
+        let h;
+        let bw = 3;
+
+        glass.classList.add('img-manifier-glass');
+
+        img.parentElement.insertBefore(glass, img);
+
+        glass.style.backGroundColor = 'orange';
+        glass.style.backgroundRepeat = 'no-repeat';
+        glass.style.backgroundSize =
+          img.width * zoom + 'px ' + img.height * zoom + 'px';
+
+        w = glass.offsetWidth / 2;
+        h = glass.offsetHeight / 2;
+
+        // glass.addEventListener('mousemove', move)
+      }
+    </script>
+  </body>
+</html>

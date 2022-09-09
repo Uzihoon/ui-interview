@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed sidebar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
+      .sidenav {
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+
+      .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .main {
+        margin-left: 160px; /* Same as the width of the sidenav */
+        font-size: 28px; /* Increased text to enable scrolling */
+        padding: 0px 10px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidenav">
+      <a href="#about">About</a>
+      <a href="#service">Service</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="main">
+      <h2>Sidebar</h2>
+      <p
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quasi
+        officia, consectetur nam deserunt corporis at enim dolor laudantium nisi
+        error quis! Doloribus rerum fugiat, est ea ex nulla accusamus.</p
+      >
+      <p
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
+        reprehenderit ex laborum reiciendis, ullam harum fuga obcaecati illo
+        hic, ratione necessitatibus possimus atque doloremque sed totam corporis
+        quidem quaerat itaque?Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Esse consectetur veniam architecto. Cum quia eius est
+        laudantium optio! Id excepturi pariatur accusamus iusto quam
+        exercitationem impedit, earum sed doloremque beatae!</p
+      >
+    </div>
+  </body>
+</html>

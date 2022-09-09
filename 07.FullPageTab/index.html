@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full Page Tab</title>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .tablink {
+        background-color: #555;
+        color: #fff;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+      }
+
+      .tablink:hover {
+        background-color: #777;
+      }
+
+      .tabcontent {
+        color: #fff;
+        display: none;
+        padding: 100px 20px;
+        height: 100%;
+      }
+
+      #home {
+        background-color: red;
+      }
+
+      #news {
+        background-color: green;
+      }
+
+      #contact {
+        background-color: blue;
+      }
+
+      #about {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab">
+      <button class="tablink" data-id="home" data-color="red">Home</button>
+      <button class="tablink" data-id="news" data-color="green">News</button>
+      <button class="tablink" data-id="contact" data-color="blue"
+        >Contact</button
+      >
+      <button class="tablink" data-id="about" data-color="orange">About</button>
+    </div>
+
+    <div id="home" class="tabcontent" id="default">
+      <h3>Home</h3>
+      <p>This is home tab</p>
+    </div>
+    <div id="news" class="tabcontent">
+      <h3>News</h3>
+      <p>This is news tab</p>
+    </div>
+    <div id="contact" class="tabcontent">
+      <h3>Contact</h3>
+      <p>This is contact tab</p>
+    </div>
+    <div id="about" class="tabcontent">
+      <h3>About</h3>
+      <p>This is about tab</p>
+    </div>
+
+    <script>
+      const tab = document.querySelector('.tab');
+
+      tab.addEventListener('click', (event) => {
+        if (!event.target.classList.contains('tablink')) return;
+
+        const tabId = event.target.dataset.id;
+        const color = event.target.dataset.color;
+
+        [...document.querySelectorAll('.tabcontent')].forEach(
+          (tab) => (tab.style.display = 'none')
+        );
+        [...document.querySelectorAll('.tablink')].forEach(
+          (tab) => (tab.style.backgroundColor = '')
+        );
+
+        document.getElementById(tabId).style.display = 'block';
+        event.target.style.backgroundColor = color;
+      });
+
+      document.getElementById('default').click();
+    </script>
+  </body>
+</html>
