@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collapse</title>
+    <style>
+      .collapsible {
+        background-color: #777;
+        color: #fff;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+      }
+
+      .active .collapsible:hover {
+        background-color: #555;
+      }
+
+      .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #f1f1f1;
+        transition: display 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Collapsibles</h2>
+    <p>A Collapsible:</p>
+    <button class="collapsible">Open Collapsible</button>
+    <div class="content">
+      <p
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi porro
+        rem accusantium obcaecati placeat asperiores iure reiciendis, nisi quos.
+        Qui vel cupiditate repellat recusandae necessitatibus quia facere,
+        sapiente id incidunt?</p
+      >
+    </div>
+
+    <p>Collapsible Set:</p>
+    <button class="collapsible">Oepn Section 1</button>
+    <div class="content">
+      <p
+        >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati
+        dolorem aliquid quasi? Blanditiis, quidem doloribus ipsa, rerum
+        consectetur vero recusandae velit cupiditate odit mollitia ratione
+        veritatis facilis, rem non! At!</p
+      >
+    </div>
+    <button class="collapsible">Open Section 2</button>
+    <div class="content">
+      <p
+        >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel corrupti
+        incidunt odit sed quisquam aliquam provident deserunt accusamus quasi
+        quibusdam debitis officiis, impedit quam autem. Velit ipsam provident
+        sunt veniam!</p
+      >
+    </div>
+    <button class="collapsible">Open Section 3</button>
+    <div class="content">
+      <p
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+        mollitia itaque possimus ab commodi autem! Modi dicta, culpa nihil
+        deleniti rerum explicabo natus optio nostrum, temporibus commodi impedit
+        doloribus harum?</p
+      >
+    </div>
+    <script>
+      const coll = document.querySelectorAll('.collapsible');
+
+      [...coll].forEach((element) => {
+        element.addEventListener('click', function () {
+          element.classList.toggle('active');
+
+          let content = element.nextElementSibling;
+          if (content.style.display === 'block') {
+            content.style.display = 'none';
+          } else {
+            content.style.display = 'block';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
