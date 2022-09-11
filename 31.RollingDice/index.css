@@ -1,0 +1,104 @@
+#container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+#input {
+  width: 100px;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  margin: 20px;
+}
+
+.dot {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.face-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.face-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.face-2 span {
+  margin: 10px;
+}
+
+.face-2 span:nth-child(2) {
+  align-self: flex-end;
+}
+
+.face-3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.face-3 span {
+  margin: 10px;
+}
+
+.face-3 span:nth-child(2) {
+  align-self: center;
+  margin: 0;
+}
+
+.face-3 span:nth-child(3) {
+  align-self: flex-end;
+}
+
+.face-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.face-4 span {
+  justify-self: center;
+  align-self: center;
+}
+
+.face-5 {
+  display: grid;
+}
+
+.face-5 .col {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.face-5 .col:nth-child(2) {
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.face-5 .col:last-child span {
+  align-self: flex-end;
+}
+
+.face-6 {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+}
+
+.face-6 span {
+  justify-self: center;
+  align-self: center;
+}
