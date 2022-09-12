@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <section class="shopping-list-app">
+      <div class="user-input">
+        <form action="">
+          <input type="text" placeholder="Add to shopping list" name="query" />
+        </form>
+        <div class="autofill-list"></div>
+      </div>
+
+      <div class="shopping-list-conttent">
+        <h1 class="title">My Shopping List</h1>
+        <ul class="shopping-list">
+          <li class="empty">Shopping list is empty</li>
+        </ul>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/7744e10e83.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
