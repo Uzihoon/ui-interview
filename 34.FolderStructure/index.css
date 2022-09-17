@@ -1,0 +1,53 @@
+.box {
+  margin-left: 10px;
+}
+.file-box {
+  display: flex;
+  font-size: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.file-box:hover {
+  background-color: #eee;
+}
+
+.folder-icon {
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+  margin-right: 20px;
+}
+
+.folder-icon.open::after {
+  border-color: #555 transparent transparent transparent;
+  margin-top: -2px;
+  opacity: 1;
+}
+
+.file-title {
+  margin-left: 20px;
+}
+
+.folder-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  margin-top: -7px;
+  border: 10px solid;
+  border-color: transparent transparent transparent #555;
+  opacity: 0.5;
+}
+
+.file-icon {
+  width: 20px;
+  height: 3px;
+  background-color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
