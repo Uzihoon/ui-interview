@@ -1,0 +1,15 @@
+.star {
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+  font-weight: bold;
+  color: gray;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star.active {
+  color: #ffd500;
+}

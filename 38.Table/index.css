@@ -1,0 +1,77 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px;
+  position: relative;
+}
+
+table {
+  width: 70%;
+  border-collapse: collapse;
+  font-size: 12px;
+  font-weight: normal;
+  font-family: sans-serif;
+  text-align: left;
+}
+
+thead {
+  color: #fff;
+  background-color: #222;
+}
+
+thead th {
+  padding: 11px 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+tbody tr:nth-child(odd) {
+  background: #eee;
+}
+
+tbody tr td {
+  padding: 10px;
+}
+
+.pagination {
+  width: 70%;
+  text-decoration: none;
+  text-align: center;
+  padding: 50px 0;
+  display: block;
+}
+
+.pagination button.button {
+  background-color: #222;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 0px;
+}
+
+#test {
+  width: 100px;
+  height: 100px;
+}
+
+.test-child {
+  width: 50px;
+  height: 50px;
+}
+
+.test-parent div {
+  background-color: red;
+}
+
+.test-child {
+  background-color: black;
+}
+
+#me {
+  background-color: yellow;
+}
+
+div.test-chil {
+  background-color: green;
+}

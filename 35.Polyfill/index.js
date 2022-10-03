@@ -77,7 +77,7 @@ function memo(fn, context) {
   const cache = new Map();
 
   return function (...args) {
-    const key = JSON.stringify(args);
+    const key = args.toString();
     if (!cache.has(key)) {
       cache.set(key, fn.apply(context || this, args));
     }

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: row;
+      }
+
+      button {
+        height: 25px;
+        width: 25px;
+      }
+
+      .grey {
+        color: grey;
+      }
+
+      .gold {
+        color: gold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <button data-count="1" class="star grey">*</button>
+      <button data-count="2" class="star grey">*</button>
+      <button data-count="3" class="star grey">*</button>
+      <button data-count="4" class="star grey">*</button>
+      <button data-count="5" class="star grey">*</button>
+    </div>
+    <script>
+      let stars = document.querySelectorAll('.star');
+      let container = document.querySelector('.container');
+      let currentStars = 0;
+
+      container.addEventListener('click', handleClick);
+
+      Array.from(stars).forEach((star) => {
+        star.addEventListener('mouseenter', handleFocus);
+      });
+
+      container.addEventListener('mouseleave', handleBlur);
+
+      function handleClick(click) {
+        currentStars = click.target.dataset.count;
+        Array.from(stars).forEach((star) => {
+          if (star.dataset.count > currentStars) {
+            star.classList.add('grey');
+            star.classList.remove('gold');
+          } else {
+            star.classList.add('gold');
+            star.classList.remove('grey');
+          }
+        });
+      }
+
+      function handleFocus(focus) {
+        let target = focus.target.dataset.count;
+
+        Array.from(stars).forEach((star) => {
+          if (star.dataset.count <= target) {
+            star.classList.add('gold');
+            star.classList.remove('grey');
+          } else {
+            star.classList.add('grey');
+            star.classList.remove('gold');
+          }
+        });
+      }
+
+      function handleBlur(blur) {
+        Array.from(stars).forEach((star) => {
+          if (star.dataset.count <= currentStars) {
+            star.classList.add('gold');
+            star.classList.remove('grey');
+          } else {
+            star.classList.add('grey');
+            star.classList.remove('gold');
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
